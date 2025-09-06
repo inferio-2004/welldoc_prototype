@@ -8,8 +8,6 @@
 <img width="1903" height="943" alt="Screenshot 2025-09-06 215256" src="https://github.com/user-attachments/assets/ce8e2d31-60b2-418e-85cb-5f99e3eb761c" />
 <img width="456" height="645" alt="image" src="https://github.com/user-attachments/assets/0f2ea3f9-2c33-4f2a-b72c-5bbde7da1304" />
 
-Welldoc Prototype
-
 Welldoc Prototype is a small, local web application that ingests a 90-day time-series CSV for a single patient, condenses the time series into derived features, runs a pre-trained logistic-regression model to predict deterioration risk (0 = healthy, 1 = deteriorated), computes per-feature contributions (and normalized contribution shares), and produces disease-specific charts and concise, clinician-friendly summaries using an offline LLM.
 
 This repo contains:
