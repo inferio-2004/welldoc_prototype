@@ -1,0 +1,129 @@
+:root{
+  --bg:#f7fafc;
+  --card:#ffffff;
+  --muted:#6b7280;
+  --accent:#0ea5a4;
+  --accent-2:#ef4444;
+  --shadow: 0 6px 18px rgba(15,23,42,0.08);
+  --radius:12px;
+  --glass: rgba(255,255,255,0.6);
+}
+
+*{box-sizing:border-box}
+html,body,#root{height:100%}
+body{
+  margin:0;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg,#f9fbfc 0%, #f3f6f8 100%);
+  color:#0f172a;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  padding-bottom:40px;
+}
+
+/* Topbar */
+.topbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  padding:18px 28px;
+  max-width:1200px;
+  margin:16px auto;
+  background:transparent;
+}
+.brand{display:flex;gap:12px;align-items:center}
+.brand-logo{
+  width:54px;height:54px;border-radius:10px;background:linear-gradient(135deg,#fff 0,#eaffff 80%);display:flex;align-items:center;justify-content:center;font-size:26px;box-shadow:var(--shadow)
+}
+.brand h1{margin:0;font-size:20px}
+.subtitle{font-size:12px;color:var(--muted)}
+
+.uploader{display:flex;gap:10px;align-items:center}
+.file-btn{display:inline-flex;align-items:center;gap:10px;background:var(--card);padding:8px 12px;border-radius:8px;border:1px solid #eef2f7;cursor:pointer;box-shadow:var(--shadow);font-size:13px}
+.file-btn input{display:none}
+.file-btn span{color:#0f172a}
+.primary{background:var(--accent);color:white;border:none;padding:9px 14px;border-radius:10px;cursor:pointer;box-shadow:0 6px 18px rgba(14,165,164,0.12)}
+.primary:disabled{opacity:0.6;cursor:default}
+
+/* Main area */
+.main{max-width:1200px;margin:12px auto;padding:10px}
+.grid-2{display:grid;grid-template-columns: 1fr 420px;gap:18px}
+.card{background:var(--card);border-radius:var(--radius);padding:16px;box-shadow:var(--shadow);border:1px solid rgba(15,23,42,0.03)}
+.summary-card{display:flex;flex-direction:column;gap:14px}
+.summary-header{display:flex;justify-content:space-between;align-items:center}
+.pill{background:#eef2f6;padding:6px 10px;border-radius:8px;font-size:12px;color:#0f172a;display:inline-block}
+.summary-meta{display:flex;gap:16px;color:var(--muted);font-size:14px}
+.summary-box{border-radius:8px;padding:12px;background:linear-gradient(180deg, rgba(14,165,164,0.03), rgba(14,165,164,0.01)); border:1px solid rgba(14,165,164,0.06)}
+.summary-box h3{margin:0 0 8px 0}
+.summary-text{white-space:pre-wrap;color:#0f172a;line-height:1.45}
+
+.top3-row{margin-top:8px}
+.top3-list{display:flex;flex-direction:column;gap:6px}
+.top3-item{display:flex;justify-content:space-between;align-items:center;padding:8px;border-radius:8px;background:linear-gradient(180deg, #fff, #fbfbfb);border:1px solid #f3f6f9}
+.top3-name{font-weight:600}
+.top3-meta{display:flex;gap:8px;align-items:center}
+.small{font-size:12px}
+.muted{color:var(--muted)}
+
+/* Chart card */
+.chart-card{display:flex;flex-direction:column;gap:10px}
+.chart-wrap{height:260px;display:flex;align-items:center;justify-content:center;border-radius:8px;border:1px dashed #eef4f6;padding:8px}
+.chart-wrap img{max-width:100%;max-height:240px;object-fit:contain}
+.legend{display:flex;gap:12px;margin-top:8px}
+.legend-item{display:flex;align-items:center;gap:8px;color:var(--muted)}
+.dot{width:12px;height:12px;border-radius:3px;display:inline-block}
+.dot.red{background:var(--accent-2)}
+.dot.blue{background:#60a5fa}
+
+/* Disease reports */
+.full-width{grid-column: 1 / -1}
+.disease-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:12px}
+.disease-head{display:flex;justify-content:space-between;align-items:center}
+.disease-features ul{margin:8px 0;padding-left:18px}
+.disease-text{white-space:pre-wrap;color:#111;line-height:1.35}
+
+/* footer */
+.footer{max-width:1200px;margin:22px auto 60px;display:flex;justify-content:space-between;color:var(--muted);font-size:13px}
+
+/* placeholder state */
+.placeholder-card{max-width:980px;margin:24px auto;padding:24px;border-radius:12px;background:linear-gradient(180deg,#ffffff,#fbfeff);box-shadow:var(--shadow);text-align:center}
+
+/* Ensure disease card shows charts fully and images don't overlap text */
+.disease-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow: visible; /* allow chart labels to show outside if needed */
+  min-height: 180px;
+  padding-bottom: 16px;
+}
+
+/* top chart area - make chart wider and responsive */
+.disease-chart-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 6px;
+}
+
+/* Larger chart for readability; responsive within card */
+.mini-chart-large {
+  width: 100%;
+  max-width: 640px;  /* allow bigger charts */
+  height: auto;
+  object-fit: contain;
+  border: 1px solid #eef2f7;
+  border-radius: 8px;
+  background: white;
+  padding: 6px;
+  box-shadow: 0 6px 18px rgba(15,23,42,0.04);
+}
+
+/* if the card is narrow (mobile), limit chart height */
+@media (max-width: 720px) {
+  .mini-chart-large {
+    max-width: 100%;
+    height: auto;
+  }
+}
