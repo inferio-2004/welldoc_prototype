@@ -12,41 +12,28 @@ Welldoc Prototype is a small, local web application that ingests a 90-day time-s
 
 This repo contains:
 
-backend/ — FastAPI server that builds derived features, runs the model (.pkl), computes contributions, and (optionally) calls a local GGUF LLM for humanized summaries.
-
-frontend/ — React UI for uploading CSVs, viewing predictions, top contributors, disease reports, and the final summary.
-
-input_cols.txt / derived_cols.txt — human-readable column definitions used to map raw inputs → derived features.
-
-Instructions to use Git LFS for large model binaries (.pkl, .gguf).
-
-This project is designed for prototyping and clinician demonstration — not for production use or standalone clinical decision making. Do not commit private patient data.
+1.backend/ — FastAPI server that builds derived features, runs the model (.pkl), computes contributions, and (optionally) calls a local GGUF LLM for humanized summaries.
+2.frontend/ — React UI for uploading CSVs, viewing predictions, top contributors, disease reports, and the final summary.
+3.input_cols.txt / derived_cols.txt — human-readable column definitions used to map raw inputs → derived features.
+4.Instructions to use Git LFS for large model binaries (.pkl, .gguf).
+5.This project is designed for prototyping and clinician demonstration — not for production use or standalone clinical decision making. Do not commit private patient data.
 
 Key features
 
-Accepts a CSV of daily vitals (up to 90 days) and groups by patient_id (or treats entire file as one patient).
-
-Generates derived features (latest, 7-day average, slopes, volatility, count of threshold breaches).
-
-Runs an already-trained logistic regression model (you supply model.pkl) and returns prediction + confidence.
-
-Computes per-feature linear contributions (coef * value), ranks top-3, and shows normalized percentages.
-
-Produces per-disease charts (Heart disease, Diabetes, Asthma, General) and LLM-generated Interpretation + Prevention text.
-
-Optional offline LLM integration (GGUF via llama-cpp-python or equivalent) for natural language summaries.
-
-Stylized React UI with downloadable final report.
+1.Accepts a CSV of daily vitals (up to 90 days) and groups by patient_id (or treats entire file as one patient).
+2.Generates derived features (latest, 7-day average, slopes, volatility, count of threshold breaches).
+3.Runs an already-trained logistic regression model (you supply model.pkl) and returns prediction + confidence.
+4.Computes per-feature linear contributions (coef * value), ranks top-3, and shows normalized percentages.
+5.Produces per-disease charts (Heart disease, Diabetes, Asthma, General) and LLM-generated Interpretation + Prevention text.
+6.Optional offline LLM integration (GGUF via llama-cpp-python or equivalent) for natural language summaries.
+7.Stylized React UI with downloadable final report.
 
 How it works (high level)
 
-Frontend uploads a CSV to /predict.
-
-Backend reads CSV, groups rows, builds derived features per patient using heuristics and derived_cols.txt.
-
-Backend aligns features to the model, runs prediction and probability, computes per-feature contributions using model.coef_.
-
-Backend normalizes contributions to percentages, generates charts (PNG, base64), prepares disease-specific feature groups, and optionally calls the offline LLM to produce concise text summaries.
+1.Frontend uploads a CSV to /predict.
+2.Backend reads CSV, groups rows, builds derived features per patient using heuristics and derived_cols.txt.
+3.Backend aligns features to the model, runs prediction and probability, computes per-feature contributions using model.coef_.
+4.Backend normalizes contributions to percentages, generates charts (PNG, base64), prepares disease-specific feature groups, and optionally calls the offline LLM to produce concise text summaries.
 
 # WellDoc Prototype 🩺
 
