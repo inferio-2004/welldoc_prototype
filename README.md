@@ -180,4 +180,7 @@ MIT License © 2025
 
 ## 👨‍💻 Authors
 
-- **Aniruth (inferio-2004)** — Full-stack prototype, ML integration
+- **Aniruth (inferio-2004)** — Full-stack prototype, ML integration, ML training
+- **Akil (AKIL3333)** — Full-stack prototype, ML integration, ML training
+- **Thashventh(JagadeeshTheJD)** — Full-stack prototype, ML integration, ML training
+- **Jagadesh(thahsventh21)** — Full-stack prototype, ML integration, ML training
