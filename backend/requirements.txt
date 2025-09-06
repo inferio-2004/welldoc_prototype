@@ -1,0 +1,11 @@
+fastapi
+uvicorn[standard]
+pandas
+numpy
+scikit-learn
+joblib
+matplotlib
+python-multipart
+aiohttp
+llama-cpp-python
+huggingface-hub

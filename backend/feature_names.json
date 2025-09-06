@@ -1,0 +1,12 @@
+[
+  "age",
+  "heart_rate",
+  "systolic_bp",
+  "diastolic_bp",
+  "resp_rate",
+  "spo2",
+  "temperature",
+  "wbc_count",
+  "hemoglobin",
+  "creatinine"
+]

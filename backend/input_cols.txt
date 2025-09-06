@@ -1,0 +1,30 @@
+Input Variables:
+age
+sex
+chest pain type -(1-4)
+
+cholesterol float
+BMI float
+Smoker yes/no
+Blood Pressure float
+
+Glucose float
+
+weight (float)
+SpO2 levels float
+
+Heart Rate float
+
+
+sleep time (duration in hrs)
+heart disease yes/no
+diabetes yes/no
+Asthma yes/no
+Family History Asthma yes
+Pollution Index (PI) score
+Wheezing problem yes/no
+
+
+
+Target variable:
+Deteriorated - 0/1
